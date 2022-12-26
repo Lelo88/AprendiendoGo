@@ -27,6 +27,10 @@ var products=[]Product{
    },
 }
 
+func Save(product Product, products *[]Product){
+	*products = append(*products, product)
+}
+
 func GetAll(products []Product){
 	for _,product := range products{
 		fmt.Println(product.Id, product.Name, product.Category)
@@ -34,5 +38,17 @@ func GetAll(products []Product){
 }
 
 func main(){
+	
+	GetAll(products)
+	newProduct:=Product{
+		Id: 987,
+		Name: "Azucar",
+		Price: 26.6,
+		Description: "",
+		Category: "A",
+	}
+
+	Save(newProduct, &products)
+	
 	GetAll(products)
 }
