@@ -12,6 +12,6 @@ func TestCalculaSalario(t *testing.T){
 	if salario != salarioEsperado{
 		t.Errorf("La funcion calculaSalario() da como resultado %.2f, pero el resultado esperado es %.2f", salario, salarioEsperado)
 	} else{
-		println("Salario esperado: %.2f", salarioEsperado, "Salario: %.2f", salario )
+		println("Salario esperado:", salarioEsperado, "Salario:", salario )
 	}
 }
