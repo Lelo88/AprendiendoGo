@@ -10,7 +10,7 @@ type Product struct {
 	Category string
 }
 
-var products =[] Product {
+var products=[]Product{
 	{
 	   Id: 987,
 	   Name: "Manzana",
@@ -27,10 +27,12 @@ var products =[] Product {
    },
 }
 
-func (p *Product) Save(product Product) {
-	
+func GetAll(products []Product){
+	for _,product := range products{
+		fmt.Println(product.Id, product.Name, product.Category)
+	}
 }
 
 func main(){
-	fmt.Println(products)
+	GetAll(products)
 }
