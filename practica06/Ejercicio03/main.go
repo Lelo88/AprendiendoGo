@@ -5,7 +5,7 @@ import (
 	"errors"
 )
 
-var errorSalarioMinimo = errors.New("el salario es menor a 10000")
+var errorSalarioMinimo = errors.New("El salario es menor a 10000")
 
 func calculaSalario(sal int) error{
 	if sal<10000{
@@ -24,5 +24,5 @@ func main(){
 
 	if errors.Is(err,errorSalarioMinimo){
 		fmt.Println(err)
-	}
+	}	
 }
