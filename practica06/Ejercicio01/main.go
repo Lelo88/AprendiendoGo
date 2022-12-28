@@ -11,7 +11,6 @@ func (e Error) Error() string{
 	return "Error: el salario ingresado no alcanza el mínimo no imponible"
 }
 
-
 func main(){
 	salary:=0
 	fmt.Println("Ingrese el salario correspondiente: ")
