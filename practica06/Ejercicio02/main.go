@@ -15,7 +15,6 @@ func calculaSalario(salario int) error{
 	if salario < 10000 {
 		return ErrorSalario{}
 	}
-
 	return nil
 }
 
