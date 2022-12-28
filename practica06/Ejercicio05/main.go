@@ -7,5 +7,6 @@ import (
 
 func main(){
 	fmt.Println()
-	errors.New("")
+	error:=errors.New("este es un error")
+	fmt.Println(error)
 }
