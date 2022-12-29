@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+//struct Product
 type Product struct {
 	Id int64
 	Name string
@@ -10,7 +11,10 @@ type Product struct {
 	Category string
 }
 
-var products=[]Product{
+//defino un slice con el struct Product
+type Products []Product 
+
+var products=Products{
 	{
 	   Id: 987,
 	   Name: "Manzana",
@@ -27,28 +31,32 @@ var products=[]Product{
    },
 }
 
-func Save(product Product, products *[]Product){
-	*products = append(*products, product)
+func (prods *Product) Save(){
+	products = append(products, *prods)
 }
 
-func GetAll(products []Product){
-	for _,product := range products{
+func (prods Products) GetAll(){
+	for _,product := range prods{
 		fmt.Println(product.Id, product.Name, product.Category)
 	}
 }
 
+/*func getByID(id int) (prod *Products){
+	
+}*/
+
 func main(){
 	
-	GetAll(products)
+	products.GetAll()
 	newProduct:=Product{
-		Id: 987,
+		Id: 456,
 		Name: "Azucar",
 		Price: 26.6,
 		Description: "",
 		Category: "A",
 	}
 
-	Save(newProduct, &products)
-	
-	GetAll(products)
+	newProduct.Save()
+
+	products.GetAll()
 }
