@@ -41,9 +41,25 @@ func (prods Products) GetAll(){
 	}
 }
 
-/*func getByID(id int) (prod *Products){
-	
-}*/
+func getByID(id int64) (ide int64, message string){
+	if id<=0{
+		id = ide
+		message = "El Id ingresado no es correcto"
+		return ide, message 
+	}
+
+	for _,prod := range products {
+		if prod.Id == id{
+			ide = id
+			message = prod.Name
+			return ide, message
+		} else {
+			message = "No existe ese producto"
+			return ide, message
+		}
+	}
+	return ide, message
+}
 
 func main(){
 	
@@ -59,4 +75,9 @@ func main(){
 	newProduct.Save()
 
 	products.GetAll()
+
+	otroProducto, mensaje := getByID(45)
+	otroProducto2, mensaje2 := getByID(987)
+	fmt.Println(otroProducto, mensaje)
+	fmt.Println(otroProducto2, mensaje2)
 }
